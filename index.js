@@ -6,7 +6,11 @@ const filePath = `${dirName}/furqan.txt`;
 
 
 fs.readFile(filePath, "utf8" ,(err,item) => {
+   if(!err){ 
     console.log(item)
+   }else{
+    console.log("Read file got error")
+   }
 });
 
 
