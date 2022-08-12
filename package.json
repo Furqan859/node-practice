@@ -1,0 +1,29 @@
+{
+  "name": "node-practice",
+  "version": "1.0.0",
+  "description": "node js practise",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Furqan859/node-practice.git"
+  },
+  "keywords": [
+    "node",
+    "practise"
+  ],
+  "author": "furqan rasool",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Furqan859/node-practice/issues"
+  },
+  "homepage": "https://github.com/Furqan859/node-practice#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "colors": "^1.4.0",
+    "nodemon": "^2.0.19",
+    "simple-node-logger": "^21.8.12"
+  }
+}
