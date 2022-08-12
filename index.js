@@ -17,6 +17,11 @@ fs.appendFile(filePath," This file is append",(err)=>{
 })
 
 
+fs.rename(filePath,`${dirName}/fruit.txt`,(err)=>{
+    console.log("file is renamed")
+})
+
+
 
 
 
