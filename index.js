@@ -2,10 +2,12 @@ const fs = require('fs');
 const path = require('path');
 const dirName = path.join(__dirname, 'crud');
 const filePath = `${dirName}/furqan.txt`;
-fs.writeFileSync(filePath,"this is sample file")
+// fs.writeFileSync(filePath,"this is sample file")
 
 
-
+fs.readFile(filePath, "utf8" ,(err,item) => {
+    console.log(item)
+})
 
 
 
