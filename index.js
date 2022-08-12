@@ -7,6 +7,13 @@ const filePath = `${dirName}/furqan.txt`;
 
 fs.readFile(filePath, "utf8" ,(err,item) => {
     console.log(item)
+});
+
+
+fs.appendFile(filePath," This file is append",(err)=>{
+    if(!err){
+        console.log("file is updated")
+    }
 })
 
 
