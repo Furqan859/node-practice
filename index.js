@@ -5,26 +5,28 @@ const filePath = `${dirName}/furqan.txt`;
 // fs.writeFileSync(filePath,"this is sample file")
 
 
-fs.readFile(filePath, "utf8" ,(err,item) => {
-   if(!err){ 
-    console.log(item)
-   }else{
-    console.log("Read file got error")
-   }
-});
+// fs.readFile(filePath, "utf8" ,(err,item) => {
+//    if(!err){ 
+//     console.log(item)
+//    }else{
+//     console.log("Read file got error")
+//    }
+// });
 
 
-fs.appendFile(filePath," This file is append",(err)=>{
-    if(!err){
-        console.log("file is updated")
-    }
-})
+// fs.appendFile(filePath," This file is append",(err)=>{
+//     if(!err){
+//         console.log("file is updated")
+//     }
+// })
 
 
-fs.rename(filePath,`${dirName}/fruit.txt`,(err)=>{
-    console.log("file is renamed")
-})
+// fs.rename(filePath,`${dirName}/fruit.txt`,(err)=>{
+//     console.log("file is renamed")
+// })
 
+
+fs.unlinkSync(`${dirName}/crud.txt`)
 
 
 
