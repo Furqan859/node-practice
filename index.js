@@ -5,6 +5,20 @@ const app = express()
 const dirpath = path.join(__dirname, 'public');
 // app.use(express.static(dirpath));
 
+app.set('view engine', 'ejs');
+
+
+
+app.get('/profile', (req, res) =>{
+    const user = {
+        name:"furqan",
+        city:"lahore",
+        email:"furqan@gmail.com",
+    }
+    res.render('profile',{user})
+})
+
+
 app.get('', (req, res) =>{
     res.sendFile(`${dirpath}/index.html`)
 })
