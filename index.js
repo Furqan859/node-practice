@@ -2,7 +2,8 @@ const express = require('express');
 const app = express();
 
 app.get('',(req, res)=>{
-    res.send("this is home page")
+    console.log("this is data send by browser",req.query.name)
+    res.send("this is home page , welcome " + req.query.name)
 })
 
 app.get('/about',(req, res)=>{
