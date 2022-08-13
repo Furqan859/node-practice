@@ -14,8 +14,13 @@ app.get('/profile', (req, res) =>{
         name:"furqan",
         city:"lahore",
         email:"furqan@gmail.com",
+        skills:['html','css','javascript','react','node','expree','mongo']
     }
     res.render('profile',{user})
+})
+
+app.get('/login', (req, res)=>{
+    res.render('login')
 })
 
 

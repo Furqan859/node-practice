@@ -5,8 +5,14 @@
     <title>prodile page</title>
 </head>
 <body>
+    <%- include('common/header'); %> 
     <h1>welcome : <%= user.name %></h1>
     <h1>my city is : <%= user.city %></h1>
     <h1>my mail address is : <%= user.email %></h1>
+    <ul>
+     <% user.skills.forEach((item)=>{ %>
+        <li><%=item%></li>
+        <%})%>
+</ul>
 </body>
 </html>
