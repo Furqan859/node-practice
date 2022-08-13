@@ -1,24 +1,24 @@
 const express = require('express');
 const app = express();
+
 const reqFile = require('./middleware');
+
 const route = express.Router();
 
 route.use(reqFile)
 
-// app.use(reqFile);
-
 app.get('/', (req, res) => {
-    res.send("welcome on home page");
+    res.send("this is a home page")
 })
 
-app.get('/users',(req,res)=>{
-    res.send("welcome on user page")
+app.get('/about',(req,res)=>{
+    res.send("this is a about page")
 })
 
-route.get('/about', (req, res) => {
-    res.send("welcome on About page");
+route.get('/help',(req,res)=>{
+    res.send("this is a help page")
 })
 
 app.use('/',route);
 
-app.listen(5000)
+app.listen(5000);

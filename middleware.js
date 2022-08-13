@@ -1,11 +1,10 @@
-
-module.exports = reqFile = (req, res, next) => {
+module.exports = reqFile = (req,res,next) => {
     if(!req.query.age){
-        res.send("Pleaser provide age")
+        res.send("Age is not entered!");
+
     }else if(req.query.age<18){
-        res.send("you are under 18 years old")
-    }
-    else{
-   next();
+        res.send("Age is under 18 not allowed!")
+    }else{
+        next();
     }
 }
