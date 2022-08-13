@@ -1,7 +1,27 @@
-const fs = require('fs');
-const path = require('path');
-const dirName = path.join(__dirname, 'crud');
-const filePath = `${dirName}/furqan.txt`;
+//Asynchronous and synchronous operations
+let a=20;
+let b=0;
+setTimeout(()=>{
+    b=20;
+})
+console.log(a+b)
+
+//in this function Asynchrous way to get the output because of asynchronous he cant wait to load on some function its puts in api and continue to next line and perform other task.
+// in this situation we use promises to make synchronous to load function then move on next line
+
+
+
+
+
+
+
+
+
+
+// const fs = require('fs');
+// const path = require('path');
+// const dirName = path.join(__dirname, 'crud');
+// const filePath = `${dirName}/furqan.txt`;
 // fs.writeFileSync(filePath,"this is sample file")
 
 
@@ -26,7 +46,7 @@ const filePath = `${dirName}/furqan.txt`;
 // })
 
 
-fs.unlinkSync(`${dirName}/.txt`)
+// fs.unlinkSync(`${dirName}/.txt`)
 
 
 
