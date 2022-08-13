@@ -1,10 +1,31 @@
-//Asynchronous and synchronous operations
-let a=20;
-let b=0;
-setTimeout(()=>{
-    b=20;
+
+//there is how we can use promise to make Asynchronous to sychronous
+//promise is function that stop the asynchronous and wait the function gut output then continue to next line 
+
+let a = 20;
+let b= 0;
+
+let waitData = new Promise((resolve, reject) => {
+    setTimeout(() =>{
+        resolve(30)
+    },2000)
 })
-console.log(a+b)
+
+
+waitData.then((data)=>{
+    b=data
+    console.log(a+b)
+})
+
+
+
+//Asynchronous and synchronous operations
+// let a=20;
+// let b=0;
+// setTimeout(()=>{
+//     b=20;
+// })
+// console.log(a+b)
 
 //in this function Asynchrous way to get the output because of asynchronous he cant wait to load on some function its puts in api and continue to next line and perform other task.
 // in this situation we use promises to make synchronous to load function then move on next line
