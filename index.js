@@ -2,16 +2,25 @@ const express = require('express');
 const app = express();
 
 app.get('',(req, res)=>{
-    console.log("this is data send by browser",req.query.name)
-    res.send("this is home page , welcome " + req.query.name)
+    
+    res.send(`<h1>this is home page</h1>
+    <a href="/about">About</a>
+    <a href="/help">help</a>
+    `)
 })
 
 app.get('/about',(req, res)=>{
-    res.send("Hello this is about page")
+    res.send(`<input type="text placeholder="username value="${req.query.name}" />
+    <button>My Button</button>
+    <a href="/">home</a>
+    `)
 })
 
 app.get('/help',(req,res)=>{
-    res.send("Hello this is help page")
+    res.send(  `Hello this is help page
+    <a href="/">home</a>
+    `
+    )
 })
 
 
