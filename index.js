@@ -1,21 +1,44 @@
+console.log("Starting")
+
+
+setTimeout(()=>{
+    console.log("wait 2 secound")
+},2000)
+
+
+setTimeout(()=>{
+    console.log("wait 0 secound")
+},0)
+
+console.log("finishing")
+
+
+
+
+
+
+
+
+
+
 
 //there is how we can use promise to make Asynchronous to sychronous
 //promise is function that stop the asynchronous and wait the function gut output then continue to next line 
 
-let a = 20;
-let b= 0;
+// let a = 20;
+// let b= 0;
 
-let waitData = new Promise((resolve, reject) => {
-    setTimeout(() =>{
-        resolve(30)
-    },2000)
-})
+// let waitData = new Promise((resolve, reject) => {
+//     setTimeout(() =>{
+//         resolve(30)
+//     },2000)
+// })
 
 
-waitData.then((data)=>{
-    b=data
-    console.log(a+b)
-})
+// waitData.then((data)=>{
+//     b=data
+//     console.log(a+b)
+// })
 
 
 
