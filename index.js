@@ -26,7 +26,7 @@ const filePath = `${dirName}/furqan.txt`;
 // })
 
 
-fs.unlinkSync(`${dirName}/crud.txt`)
+fs.unlinkSync(`${dirName}/.txt`)
 
 
 
