@@ -1,34 +1,21 @@
+const {MongoClient} = require('mongodb');
 const express = require('express');
-const mongoose = require('mongoose');
-require('dotenv').config()
 const app = express();
+require('dotenv').config()
 
-const reqFile = require('./middleware');
+const database = 'admin';
+const client = new MongoClient(process.env.URI)
 
-const route = express.Router();
+async function getData() {
+    let result = await client.connect();
+    let db = result.db(database);
+    let collection = db.collection('data');
+    let response = await collection.find({}).toArray();
+    console.log(response)
 
-route.use(reqFile)
+}
 
-app.get('/', (req, res) => {
-    res.send("this is a home page")
-})
+getData();
+app.listen(process.env.PORT)
 
-app.get('/about',(req,res)=>{
-    res.send("this is a about page")
-})
 
-app.get('/help',reqFile,(req,res)=>{
-    res.send("this is a help page")
-})
-
-app.use('/',route);
-
-const PORT = process.env.PORT  || 3000;
-
-mongoose.connect(process.env.MONGO_URI).then(()=>{
-    app.listen(PORT,()=>{
-        console.log(`server is runing on ${PORT}`);
-    });
-}).catch((err)=>{
-    console.log("error",err)    
-})
