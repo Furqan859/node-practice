@@ -1,15 +1,13 @@
 const dbConnect = require('./database')
 
-const updateData = async () => {
-
+const update = async () =>{
     const data = await dbConnect();
     const result = await data.updateOne(
-        {name: 'furqqan rasool'},
-        { 
-            $set:{name: 'furqan rasool', age : 28 }
-        }
+
+        {name:"furqan rasool"},
+        {$set:{name:"furqan rasool",age:"25"}}
     );
-    console.log(result)
+    console.log(result);
 }
 
-updateData();
+update();
