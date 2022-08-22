@@ -1,11 +1,13 @@
 const dbConnect = require('./database');
 const express = require('express');
+require('dotenv').config();
 const app = express();
 
-app.get('/', async (req, res) =>{
-    let data =await dbConnect();
-    data = await data.find().toArray();
-    res.send(data);
-})
 
-app.listen(5000);
+app.get('/',async (req,res)=>{
+  let data = await dbConnect();
+  data = await data.find().toArray();
+  res.send(data);
+});
+
+app.listen(process.env.PORT)
