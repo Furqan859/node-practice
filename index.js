@@ -1,46 +1,23 @@
-const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/admin");
+const express = require('express');
+require('./config');
+const product = require('./product');
 
+const app = express();
 
-const productSehema = new mongoose.Schema({
-    name:String,
-    age:Number,
-    number:Number
+app.use(express.json());
+
+app.post('/create', async(req, res) => {
+    let data = new product(req.body);
+    let result = await data.save()
+    console.log(result);
+    res.send(result);
+   
 });
 
-const main = async () =>{
 
-   
-    const Product = mongoose.model('datas',productSehema);
-    let data = new Product({name:"update",age:5,number:3055673859});
-    let result = await data.save();
-    console.log(result)
-}
+app.get('/list',async (req, res) => {
+    let data = await product.find();
+    res.send(data);
+})
 
-
-
-const updateInDB = async () => {
-    const Product = mongoose.model('datas',productSehema);
-    let data = await Product.updateOne(
-        {name:"update12345"},
-        {$set: {name:"furqan",age:27}}
-    )
-    console.log(data)
-}
-
-
-const deleteInDb = async () => {
-    const Product = mongoose.model('datas',productSehema)
-    let data = await Product.deleteOne({name:"furqan"})
-    console.log(data)
-}
-
-const findInDB = async () => {
-    const Product = mongoose.model('datas',productSehema)
-    let data = await Product.find()
-    console.log(data)
-}
-
-findInDB();
-
-
+app.listen(5000); 
