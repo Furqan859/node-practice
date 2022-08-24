@@ -6,15 +6,15 @@ const multer = require('multer');
 const app = express();
 
 const upload = multer({
-    storage: multer.diskStorage({
-        destination: function (req, file, cb) {
-            cb(null, "uploads")
+    storage:multer.diskStorage({
+        destination:function(req,file,cb){
+            cb(null,"uploads")
         },
-        filename: function (req, file, cb) {
-            cb(null, file.fieldname + "-" + Date.now() + ".jpg")
+        filename:function(req,file,cb){
+            cb(null,file.fieldname+"-"+Date.now()+".jpg")
         }
     })
-}).single("user_file")
+}).single("file_furqan");
 
 app.use(express.json());
 
