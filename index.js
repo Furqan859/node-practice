@@ -1,26 +1,7 @@
-const express = require('express');
-require('./config');
-const product = require('./product');
-const multer = require('multer');
+const os = require('os');
 
-const app = express();
-
-const upload = multer({
-    storage:multer.diskStorage({
-        destination:function(req,file,cb){
-            cb(null,"uploads")
-        },
-        filename:function(req,file,cb){
-            cb(null,file.fieldname+"-"+Date.now()+".jpg")
-        }
-    })
-}).single("file_furqan");
-
-app.use(express.json());
-
-app.post('/upload', upload, (req, res) => {
-    res.send("file uploaded");
-})
-
-
-app.listen(5000); 
+console.log(os.arch());
+console.log(os.freemem()/(1024*1024*1024));
+console.log(os.totalmem()/(1024*1024*1024));
+console.log(os.hostname());
+console.log(os.userInfo());
